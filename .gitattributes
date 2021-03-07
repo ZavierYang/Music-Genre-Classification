@@ -1,1 +1,2 @@
-*.rb linguist-language=Python
+*.h linguist-language=Python
+*.m linguist-language=Python
