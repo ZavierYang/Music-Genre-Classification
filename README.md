@@ -1,5 +1,5 @@
 # Importance
-This is a project from a Machine learning course (subject). **If you come to watch because of your course (subject) assignment, do not just copy and paste this code or just modify the variables name. More importantly, don’t copy this article and the results otherwise your score is possible to be penalised.** Moreover, The goal of this project is to build and critically analyse some supervised Machine Learning algorithms. Therefore, in this repository, I just tried to implement multiple models to compare their performances. There is no guarantee that these models are the best. 
+This is a project from a Machine learning course (subject). **If you come to watch because of your course (subject) assignment, DO NOT just copy and paste this code or just modify the variables name. More importantly, DO NOT copy this article and the results otherwise your score is possible to be penalised.** Moreover, The goal of this project is to build and critically analyse some supervised Machine Learning algorithms. Therefore, in this repository, I just tried to implement multiple models to compare their performances. There is no guarantee that these models are the best. 
 
 In this course, there is a in-class Kaggle competition about thus project. My final result is, 
 
