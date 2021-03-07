@@ -74,49 +74,49 @@ Hypotheses:
 
 1. KNN: In KNN implementation, three hypotheses have been trained, and the best result is this task’s baseline result because it is the most basic within all implemented models. Besides, the data is not normalized, while others model will normalize; the purpose is to compare the training difference with normalization data. The result indicates the distribution of data points for classification is not effective.
 
-| hypothesis | Valid data accuracy | Test accuracy on Kaggle |
-|-----------------|:-------------|:-------------|
-| Lyrics | 30.45% | 26.57% |
-| Metadata + audio | 34.45% | 33.60% (Baseline) |
-| Lyrics + Metadata + audio | 34.45% | 33.60% (Baseline) |
+    | hypothesis | Valid data accuracy | Test accuracy on Kaggle |
+    |-----------------|:-------------|:-------------|
+    | Lyrics | 30.45% | 26.57% |
+    | Metadata + audio | 34.45% | 33.60% (Baseline) |
+    | Lyrics + Metadata + audio | 34.45% | 33.60% (Baseline) |
 
 2. RF: The hypotheses used by RF are the same as KNN. Obviously, because of random decision trees and bagging, the final ensemble  method is much more effective than KNN in  each hypothesis
 
-| hypothesis | Valid data accuracy | Test accuracy on Kaggle |
-|-----------------|:-------------|:-------------|
-| Lyrics | 53.56% | 44.53% |
-| Metadata + audio | 47.11% | 42.97% |
-| Lyrics + Metadata + audio | 64% | 56% |
+    | hypothesis | Valid data accuracy | Test accuracy on Kaggle |
+    |-----------------|:-------------|:-------------|
+    | Lyrics | 53.56% | 44.53% |
+    | Metadata + audio | 47.11% | 42.97% |
+    | Lyrics + Metadata + audio | 64% | 56% |
 
 3. MLP: All hypotheses are used by MLP. According to the table bellow, neither training lyrics nor audio alone can achieve highest accuracy, and metadata seems ineffective. However, training lyrics and audio achieved best test accuracy. Accordingly, this combination can be  assumed that it is the most effective feature combination for prediction.
 
-| hypothesis | Valid data accuracy | Test accuracy on Kaggle |
-|-----------------|:-------------|:-------------|
-| Lyrics | 56.89% | 48.44% |
-| audio | 46.45% | 42.97% |
-| Metadata + audio | 48.45% | 42.97% |
-| Lyrics + audio | **63.33%** | **61.72%** |
-| Lyrics + Metadata + audio | 63.38% | 58.60% |
+    | hypothesis | Valid data accuracy | Test accuracy on Kaggle |
+    |-----------------|:-------------|:-------------|
+    | Lyrics | 56.89% | 48.44% |
+    | audio | 46.45% | 42.97% |
+    | Metadata + audio | 48.45% | 42.97% |
+    | Lyrics + audio | **63.33%** | **61.72%** |
+    | Lyrics + Metadata + audio | 63.38% | 58.60% |
 
 4. CNN: The purpose of CNN is to extract features of  audio data. Only audio is used as a training  feature as a result. But in order to compare the differences, audio and metadata combination is trained as well. According to the table bellow, metadata will affect the feature extraction  of CNN and reduce the prediction accuracy due to metadata is not a part of audio.
 
-| hypothesis | Valid data accuracy | Test accuracy on Kaggle |
-|-----------------|:-------------|:-------------|
-| audio | 48.45% | **44.53%** |
-| Metadata + audio | 48.22% | 36.72% |
+    | hypothesis | Valid data accuracy | Test accuracy on Kaggle |
+    |-----------------|:-------------|:-------------|
+    | audio | 48.45% | **44.53%** |
+    | Metadata + audio | 48.22% | 36.72% |
 
 5. LSTM: The purpose of LSTM is applied for continuous data. Therefore, using training features is the same as CNN. Similarly, metadata is also used as training data for comparison. According to the table bellow, metadata affect the data's continuity and reduce the accuracy of the prediction because metadata is not in the continuous value of audio feature.
 
-| hypothesis | Valid data accuracy | Test accuracy on Kaggle |
-|-----------------|:-------------|:-------------|
-| audio | 48.89% | 32.81% |
-| Metadata + audio | 44.45% | 30.47% |
+    | hypothesis | Valid data accuracy | Test accuracy on Kaggle |
+    |-----------------|:-------------|:-------------|
+    | audio | 48.89% | 32.81% |
+    | Metadata + audio | 44.45% | 30.47% |
 
 6. Eventual classifier: Through MLP and CNN results, we can realize that the difference with training audio alone will not be vast. However, using MLP to train audio and lyrics can achieve high accuracy. Therefore, in the final implementation, the feature map extracted by CNN is not directly inputted into MLP. In contrast, the feature map concatenates the vector of BOW first then trained by perceptron. The advantage is that the important audio features  are trained with lyrics instead of all audio  features. Finally, this method reaches the highest accuracy rate within all methods.
 
-| hypothesis | Valid data accuracy | Test accuracy on Kaggle |
-|-----------------|:-------------|:-------------|
-| Eventual method | **70.44%** | **62.50%** |
+    | hypothesis | Valid data accuracy | Test accuracy on Kaggle |
+    |-----------------|:-------------|:-------------|
+    | Eventual method | **70.44%** | **62.50%** |
 
 ## Conclusion
 According to this study, CNN has a better performance on audio feature extraction than LSTM and MLP in general. However, only training audio features cannot provide outstanding prediction results. Based on the final and MLP results, they show that lyrics are beneficial for predicting genre as well. But according to different data forms, different  models must be applied to combine important features to achieve the highest accuracy
